@@ -14,7 +14,68 @@ function launchIntoFullscreen(element) {
 
 $(document).ready(function() {
   $(".play").on("click", function() {
-    $(".play").velocity("transition.fadeOut");
+    $('.inner').html("");
+    $(".inner").removeClass('play');
+
+    $.Velocity.RunSequence([{
+        e: $('.breathe-in'),
+        p: "transition.fadeIn",
+        o: {
+          duration: 2000
+        }
+      },
+      {
+        e: $('.breathe-in'),
+        p: "transition.fadeOut",
+        o: {
+          duration: 1000
+        }
+      },
+      {
+        e: $('.hold'),
+        p: "transition.fadeIn",
+        o: {
+          duration: 2000
+        }
+      },
+      {
+        e: $('.hold'),
+        p: "transition.fadeOut",
+        o: {
+          duration: 3000
+        }
+      },
+      {
+        e: $('.breathe-out'),
+        p: "transition.fadeIn",
+        o: {
+          duration: 2000
+        }
+      },
+      {
+        e: $('.breathe-out'),
+        p: "transition.fadeOut",
+        o: {
+          duration: 2000
+        }
+      },
+      {
+        e: $('.hold'),
+        p: "transition.fadeIn",
+        o: {
+          duration: 2000
+        }
+      },
+      {
+        e: $('.hold'),
+        p: "transition.fadeOut",
+        o: {
+          duration: 2000
+        }
+      }
+    ]);
+
+
 
     launchIntoFullscreen(document.getElementById("doc"));
     $(".inner")
@@ -30,5 +91,6 @@ $(document).ready(function() {
       });
   });
 
-  //  exitFullscreen();
+
+
 });
