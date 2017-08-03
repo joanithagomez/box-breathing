@@ -10,71 +10,79 @@ function launchIntoFullscreen(element) {
   }
 }
 
+function exitFullscreen() {
+  if (document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if (document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if (document.webkitExitFullscreen) {
+    document.webkitExitFullscreen();
+  }
+}
+
 
 var sequence = function() {
   return [{
-      e: $('.breathe-in'),
+      e: $(".breathe-in"),
       p: "transition.fadeIn",
       o: {
         duration: 2000
       }
     },
     {
-      e: $('.breathe-in'),
+      e: $(".breathe-in"),
       p: "transition.fadeOut",
       o: {
         duration: 1000
       }
     },
     {
-      e: $('.hold'),
+      e: $(".hold"),
       p: "transition.fadeIn",
       o: {
         duration: 2000
       }
     },
     {
-      e: $('.hold'),
+      e: $(".hold"),
       p: "transition.fadeOut",
       o: {
         duration: 3000
       }
     },
     {
-      e: $('.breathe-out'),
+      e: $(".breathe-out"),
       p: "transition.fadeIn",
       o: {
         duration: 2000
       }
     },
     {
-      e: $('.breathe-out'),
+      e: $(".breathe-out"),
       p: "transition.fadeOut",
       o: {
         duration: 2000
       }
     },
     {
-      e: $('.hold'),
+      e: $(".hold"),
       p: "transition.fadeIn",
       o: {
         duration: 2000
       }
     },
     {
-      e: $('.hold'),
+      e: $(".hold"),
       p: "transition.fadeOut",
       o: {
         duration: 2000
       }
     }
   ];
-
-}
+};
 $(document).ready(function() {
   $(".play").on("click", function() {
-    $("div").removeClass('play');
-
+    $(".play").remove();
     $.Velocity.RunSequence(sequence());
 
     launchIntoFullscreen(document.getElementById("doc"));
@@ -87,10 +95,10 @@ $(document).ready(function() {
       })
       .velocity("reverse", {
         delay: 4000,
-        loop: true
+        loop: 4
       });
   });
 
-
+  exitFullscreen();
 
 });
