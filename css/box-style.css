@@ -12,9 +12,23 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
+  position: relative;
+  /* border: 1px solid yellow; */
 
-.sub-container {}
+}
+.time {
+  position: absolute;
+  top: 1vh;
+  right: 1vw;
+  color: white;
+  font-size: 1em;
+}
+.sub-container {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 1px solid red; */
+}
 
 .outer {
   position: relative;
@@ -46,23 +60,30 @@
   width: 400px;
   height: 400px;
   background-color: rgba(255, 255, 255, 1);
-  fill: #7f7fff;
+  /* fill: #7f7fff; */
   border-radius: 50%;
   cursor: pointer;
   transition: background-color 0.3s ease-in;
 }
 
 .outer .play-icon {
-  width: 40px;
-  height: 50px;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: red; */
+  width: 5em;
+  height: 5em;
 }
 
 .outer>.play:hover {
-  fill: white;
+  /* fill: white; */
   background-color: #7f7fff;
 }
 
 .instructions {
+  position: absolute;
+  top: 10%;
   display: block;
   font-size: 16px;
   color: white;
