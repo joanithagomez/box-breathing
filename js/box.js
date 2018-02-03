@@ -81,8 +81,25 @@ var sequence = function() {
   ];
 };
 $(document).ready(function() {
+
+  var seconds = 00;
+  var mins = 00;
+
+  function countUp(){
+    ++seconds;
+    $(".seconds").html(format(seconds % 60));
+    $(".minutes").html(format(parseInt(seconds/60)));
+    
+  }
+  
+  function format(secs){
+    return ("0" + secs).slice(-2);
+  }
+
+
   $(".play").on("click", function() {
     $(".play").remove();
+    setInterval(countUp, 1000);
     $.Velocity.RunSequence(sequence());
 
     launchIntoFullscreen(document.getElementById("doc"));
