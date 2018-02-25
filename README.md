@@ -23,5 +23,5 @@ Joanitha Christle Gomez
 Acknowledgements
 ==============
 
-* Codepen
+* Google breathing exercise
 
