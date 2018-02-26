@@ -27,5 +27,5 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 Acknowledgements
 ==============
 
-* Google breathing exercise
+* http://quietkit.com/box-breathing/
 
